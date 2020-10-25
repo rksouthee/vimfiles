@@ -4,8 +4,11 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=T
 
-set guifont=Go_Mono:h12,Consolas:h12
+set guifont=Consolas:h10:b
 set renderoptions=type:directx
+
+set columns=120
+set lines=30
 
 " Allow opening the system menu for the Vim window
 noremap <silent> <M-Space> :simalt ~<CR>

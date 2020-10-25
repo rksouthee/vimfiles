@@ -15,6 +15,7 @@ endif
 
 let tex_flavor = "latex"
 let c_space_errors = 1
+unlet c_comment_strings
 let python_space_error_highlight = 1
 let html_indent_autotags = "html,body"
 let vim_indent_cont = shiftwidth()
@@ -54,3 +55,6 @@ abbreviate Valeu Value
 abbreviate lcoation location
 abbreviate viod void
 abbreviate ture true
+abbreviate reutrn return
+abbreviate cosnt const
+abbreviate whiel while

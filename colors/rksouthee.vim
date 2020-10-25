@@ -7,8 +7,6 @@ endif
 
 let colors_name="rksouthee"
 
-hi CursorLine cterm=NONE guibg=Grey90
-
 hi MatchParen guibg=Turquoise
 
 hi ErrorMsg guifg=Firebrick guibg=NONE
@@ -29,14 +27,14 @@ hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 hi VertSplit cterm=NONE gui=NONE guifg=Black guibg=Grey85
 
-hi Visual guibg=LightBlue
+hi Visual guibg=LightGoldenrod
 hi WildMenu cterm=underline gui=underline guibg=LightGoldenrod
 hi QuickFixLine guibg=LightGoldenrod
 hi Search guibg=LightGoldenrod
 hi IncSearch cterm=NONE gui=NONE guifg=Black guibg=Goldenrod
 hi LineNr guifg=DarkCyan
 
-hi Pmenu guibg=#dddbff
+hi Pmenu guibg=Grey80
 hi PmenuSel guibg=#aca8fe
 hi PmenuSbar guibg=#f5f5ff
 hi PmenuThumb guibg=#958fff
@@ -51,8 +49,10 @@ hi Type gui=NONE guifg=SeaGreen
 hi Special guifg=SlateBlue
 hi Underlined gui=underline guifg=SlateBlue
 hi Ignore guifg=bg
-hi Error cterm=underline gui=underline guifg=Firebrick guibg=Grey80
-hi Todo guifg=Blue guibg=LightGoldenrod
+hi Error cterm=underline gui=reverse guifg=Firebrick2 guibg=NONE
+hi Todo gui=underline guifg=Firebrick guibg=NONE
+
+hi CursorLine cterm=NONE guibg=DarkSeaGreen2
 
 " hi texBoldItalStyle gui=NONE
 " hi texBoldStyle gui=NONE
