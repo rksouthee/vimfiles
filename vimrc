@@ -32,6 +32,10 @@ augroup FileTypeSettings
 		\call TexNewMathZone("M", "align", 1)
 augroup END
 
+if executable('nmake')
+	compiler! msvc
+endif
+
 set autowrite
 set confirm
 set autoindent
