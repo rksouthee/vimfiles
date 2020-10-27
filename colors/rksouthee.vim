@@ -35,9 +35,9 @@ hi IncSearch cterm=NONE gui=NONE guifg=Black guibg=Goldenrod
 hi LineNr guifg=DarkCyan
 
 hi Pmenu guibg=Grey80
-hi PmenuSel guibg=#aca8fe
-hi PmenuSbar guibg=#f5f5ff
-hi PmenuThumb guibg=#958fff
+hi PmenuSel guifg=White guibg=DarkBlue
+hi PmenuSbar guibg=Grey90
+hi PmenuThumb guibg=Grey40
 
 hi Comment guifg=Blue
 hi Constant guifg=VioletRed3
