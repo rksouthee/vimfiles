@@ -20,6 +20,32 @@ let python_space_error_highlight = 1
 let html_indent_autotags = "html,body"
 let vim_indent_cont = shiftwidth()
 
+function! MyCppIndent() abort
+	let l:cindent_value = cindent(v:lnum)
+	let l:prev_linenr = v:lnum - 1
+	let l:prev_line = getline(l:prev_linenr)
+
+	if l:prev_line =~# '.*)$'
+		let l:prev_linenr -= 1
+		let l:prev_line = getline(l:prev_linenr)
+		while l:prev_line =~# '.*),$'
+			let l:prev_linenr -= 1
+			let l:prev_line = getline(l:prev_linenr)
+		endwhile
+		if l:prev_line =~# '.*noexcept :$'
+			if getline(v:lnum) =~# '^\s*{'
+				let l:cindent_value = indent(l:prev_linenr)
+			else
+				let l:cindent_value = indent(l:prev_linenr) + shiftwidth()
+			endif
+		endif
+	elseif l:prev_line =~# '^\s*\(template\|friend\)'
+		let l:cindent_value = indent(l:prev_linenr)
+	endif
+
+	return l:cindent_value
+endfunction
+
 augroup FileTypeSettings
 	autocmd!
 	autocmd FileType c,cpp setlocal comments-=:// comments+=f:// |
@@ -27,9 +53,11 @@ augroup FileTypeSettings
 		\let &path = &path . "," . escape(escape(substitute($INCLUDE, ';', ',', 'g'), ' '), ' ') |
 		\endif |
 		\setlocal cinoptions=:0,l1,g0,N-s,E-s,t0,(0,Ws,j1
+		\setlocal indentexpr=MyCppIndent()
 	autocmd FileType tex setlocal spell
 	autocmd Syntax tex syn region TexZone start="\\begin{lstlisting}" end="\\{lstlisting\|%stopzone\>" |
 		\call TexNewMathZone("M", "align", 1)
+	autocmd FileType qf setlocal nocursorline
 augroup END
 
 if executable('nmake')
@@ -62,3 +90,4 @@ abbreviate ture true
 abbreviate reutrn return
 abbreviate cosnt const
 abbreviate whiel while
+abbreviate incldue include
