@@ -3,14 +3,14 @@ source $VIMRUNTIME/defaults.vim
 packadd! editexisting
 packadd! matchit
 
-if has('vcon')
-	set termguicolors
-endif
-
-colorscheme rksouthee
-
 if has('gui_running')
 	set encoding=utf-8
+endif
+
+if &term == 'xterm-256color'
+	set background=dark
+	let &t_SI="\<CSI>5 q"
+	let &t_EI="\<CSI>1 q"
 endif
 
 let tex_flavor = "latex"
@@ -19,6 +19,7 @@ unlet c_comment_strings
 let python_space_error_highlight = 1
 let html_indent_autotags = "html,body"
 let vim_indent_cont = shiftwidth()
+let vim_json_warnings = 0
 
 function! MyCppIndent() abort
 	let l:cindent_value = cindent(v:lnum)
@@ -70,7 +71,6 @@ set autoindent
 set formatoptions+=j
 set noswapfile
 let &showbreak = "\u21b3"
-set cursorline
 set visualbell
 set complete-=i
 set fileformats=unix,dos

@@ -29,7 +29,7 @@ hi VertSplit cterm=NONE gui=NONE guifg=Black guibg=Grey85
 
 hi Visual guibg=LightGoldenrod
 hi WildMenu cterm=underline gui=underline guibg=LightGoldenrod
-hi QuickFixLine guibg=LightGoldenrod
+hi link QuickFixLine CursorLine
 hi Search guibg=LightGoldenrod
 hi IncSearch cterm=NONE gui=NONE guifg=Black guibg=Goldenrod
 hi LineNr guifg=DarkCyan

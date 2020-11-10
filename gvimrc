@@ -7,8 +7,11 @@ set guioptions-=T
 set guifont=Consolas:h10:b
 set renderoptions=type:directx
 
+colorscheme rksouthee
+
 set columns=120
 set lines=30
+set cursorline
 
 " Allow opening the system menu for the Vim window
 noremap <silent> <M-Space> :simalt ~<CR>
