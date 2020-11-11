@@ -21,7 +21,7 @@ hi DiffText gui=NONE guibg=#aca8fe
 hi DiffDelete gui=NONE guifg=Black guibg=#ffdddd
 hi DiffAdd guibg=#ddffdd
 
-hi StatusLine cterm=underline gui=underline guifg=Black guibg=Grey75
+hi StatusLine cterm=underline gui=underline,bold guifg=Black guibg=Grey75
 hi StatusLineNC cterm=underline gui=underline guifg=Grey30 guibg=Grey85
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
