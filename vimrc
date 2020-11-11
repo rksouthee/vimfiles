@@ -8,9 +8,15 @@ if has('gui_running')
 endif
 
 if &term == 'xterm-256color'
+	set termguicolors
 	set background=dark
 	let &t_SI="\<CSI>5 q"
 	let &t_EI="\<CSI>1 q"
+elseif &term == 'win32' && has('vcon')
+	set termguicolors
+	let &t_SI="\e[5 q"
+	let &t_te.="\e[5 q"
+	let &t_EI="\e[1 q"
 endif
 
 let tex_flavor = "latex"
@@ -20,6 +26,8 @@ let python_space_error_highlight = 1
 let html_indent_autotags = "html,body"
 let vim_indent_cont = shiftwidth()
 let vim_json_warnings = 0
+let surround_{char2nr("8")} = "/* \r */"
+let surround_{char2nr("c")} = "const \r const"
 
 function! MyCppIndent() abort
 	let l:cindent_value = cindent(v:lnum)
