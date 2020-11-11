@@ -11,6 +11,7 @@ if &term == 'xterm-256color'
 	set termguicolors
 	set background=dark
 	let &t_SI="\<CSI>5 q"
+	let &t_te.="\e[5 q"
 	let &t_EI="\<CSI>1 q"
 elseif &term == 'win32' && has('vcon')
 	set termguicolors
