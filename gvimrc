@@ -4,7 +4,7 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=T
 
-set guifont=Consolas:h10:b
+set guifont=Cascadia_Mono:h10,Consolas:h10:b
 set renderoptions=type:directx
 
 colorscheme rksouthee
