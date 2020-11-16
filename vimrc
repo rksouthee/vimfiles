@@ -92,6 +92,7 @@ set wildignore+=*.obj
 set wildignore+=*.pdb
 
 abbreviate typenaem typename
+abbreviate typeanme typename
 abbreviate itn int
 abbreviate valeu value
 abbreviate Valeu Value
