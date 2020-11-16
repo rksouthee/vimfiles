@@ -13,6 +13,7 @@ if &term == 'xterm-256color'
 	set noesckeys
 	let &t_SI="\<CSI>5 q"
 	let &t_te.="\e[5 q"
+	let &t_ti.="\e[1 q"
 	let &t_EI="\<CSI>1 q"
 elseif &term == 'win32' && has('vcon')
 	set termguicolors
@@ -63,7 +64,7 @@ augroup FileTypeSettings
 		\if $INCLUDE != "" |
 		\let &path = &path . "," . escape(escape(substitute($INCLUDE, ';', ',', 'g'), ' '), ' ') |
 		\endif |
-		\setlocal cinoptions=:0,l1,g0,N-s,E-s,t0,(0,Ws,j1
+		\setlocal cinoptions=:0,l1,g0,N-s,E-s,t0,(0,Ws,j1 |
 		\setlocal indentexpr=MyCppIndent()
 	autocmd FileType tex setlocal spell
 	autocmd Syntax tex syn region TexZone start="\\begin{lstlisting}" end="\\{lstlisting\|%stopzone\>" |
@@ -101,3 +102,4 @@ abbreviate reutrn return
 abbreviate cosnt const
 abbreviate whiel while
 abbreviate incldue include
+abbreviate lien line
