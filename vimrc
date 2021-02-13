@@ -72,6 +72,12 @@ augroup FileTypeSettings
 	autocmd FileType qf setlocal nocursorline
 augroup END
 
+augroup WindowCursorLine
+	autocmd!
+	autocmd WinEnter * set cursorline
+	autocmd WinLeave * set nocursorline
+augroup END
+
 if executable('nmake')
 	compiler! msvc
 endif
