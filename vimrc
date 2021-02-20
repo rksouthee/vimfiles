@@ -69,6 +69,8 @@ augroup FileTypeSettings
 	autocmd FileType tex setlocal spell
 	autocmd Syntax tex syn region TexZone start="\\begin{lstlisting}" end="\\{lstlisting\|%stopzone\>" |
 		\call TexNewMathZone("M", "align", 1)
+	autocmd Syntax tex syn match texInputFile "\\lstinputlisting\s*\(\[.*\]\)\={.\{-}}"
+		\ contains=texStatement,texInputCurlies,texInputFileOpt
 	autocmd FileType qf setlocal nocursorline
 augroup END
 
