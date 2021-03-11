@@ -93,6 +93,7 @@ let &showbreak = "\u21b3"
 set visualbell
 set complete-=i
 set fileformats=unix,dos
+set shellslash
 
 set wildignore+=*.exe
 set wildignore+=*.ilk
