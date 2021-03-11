@@ -24,6 +24,7 @@ endif
 
 let tex_flavor = "latex"
 let c_space_errors = 1
+let c_no_bracket_error = 1
 unlet c_comment_strings
 let python_space_error_highlight = 1
 let html_indent_autotags = "html,body"
